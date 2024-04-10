@@ -10,9 +10,7 @@ Coinmaru Preview es una aplicación de escritorio que escanea, clasifica y suma 
 - Run this command: `py -m venv venv`  # Crea el entorno virtual
 
 ### Windows
-- Run this command: `cd venv/Scripts` # Se entra al entorno virtual
-- Run this command: `activate` # Se activa el entorno virtual
-- Run this command: `cd .. && cd ..` # Se vuelve a la ruta original
+- Run this command: `venv\Scripts\activate` # Se entra al entorno virtual
 - Run this command: `pip install -r requirements.txt` # Se descargan las dependencias dentro del entorno virtual
 ### Linux
 - Run this command: `source venv/bin/activate` # Se entra al entorno virtual

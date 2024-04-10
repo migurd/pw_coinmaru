@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Índice de la cámara que deseas utilizar (cambiar según sea necesario)
-camera_index = 0
+camera_index = 1
 
 # Inicializar la cámara
 cap = cv2.VideoCapture(camera_index)

@@ -3,7 +3,7 @@ import os
 import numpy as np
 import tkinter as tk
 from tkinter import messagebox
-
+2
 # Función para detectar monedas en un frame y devolver sus coordenadas y dimensiones
 def detectar_monedas(frame):
   # Convertir a escala de grises
@@ -54,8 +54,8 @@ def clasificar_monedas(coordenadas_monedas, diametro_max_10, diametro_min_10, di
       clasificacion = "MONEDA_DE_2"
     elif diametro_min_1 <= diametro <= diametro_max_1:
       clasificacion = "MONEDA_DE_1"
-    elif diametro_min_50 <= diametro <= diametro_max_50:
-      clasificacion = "MONEDA_DE_0.50"
+    # elif diametro_min_50 <= diametro <= diametro_max_50:
+    #   clasificacion = "MONEDA_DE_0.50"
     elif diametro_min_50pl <= diametro <= diametro_max_50pl:
       clasificacion = "MONEDA_DE_0.50"
     else:
@@ -125,24 +125,27 @@ foto_tomada = False
 
   #root.mainloop()
 
+current_path = os.getcwd()  # Get the current working directory
+direccion = os.path.join(current_path, "img", "Validacion", "Moneda_Mexicana")
+name_template = "moneda_Mexicana_"
 
 # Carpeta con las imágenes de validación de monedas de 10 pesos
-imagenes_validacion_10_dir = "C:\\Users\\koime\\Desktop\\Coinmaru\\img\\Validacion\\Moneda_Mexicana\\moneda_Mexicana_10" # Falta cambiar rutas
+imagenes_validacion_10_dir = os.path.join(direccion, f"{name_template}10") # Falta cambiar rutas
 
 # Carpeta con las imágenes de validación de monedas de 5 peso
-imagenes_validacion_5_dir = "C:\\Users\\koime\\Desktop\\Coinmaru\\img\\Validacion\\Moneda_Mexicana\\moneda_Mexicana_5"
+imagenes_validacion_5_dir = os.path.join(direccion, f"{name_template}5")
 
 # Carpeta con las imágenes de validación de monedas de 3 peso
-imagenes_validacion_2_dir = "C:\\Users\\koime\\Desktop\\Coinmaru\\img\\Validacion\\Moneda_Mexicana\\moneda_Mexicana_2"
+imagenes_validacion_2_dir = os.path.join(direccion, f"{name_template}2")
 
 # Carpeta con las imágenes de validación de monedas de 1 peso
-imagenes_validacion_1_dir = "C:\\Users\\koime\\Desktop\\Coinmaru\\img\\Validacion\\Moneda_Mexicana\\moneda_Mexicana_1"
+imagenes_validacion_1_dir = os.path.join(direccion, f"{name_template}1")
 
 # Carpeta con las imágenes de validación de monedas de 50 cent
-imagenes_validacion_50_dir = "C:\\Users\\koime\\Desktop\\Coinmaru\\img\\Validacion\\Moneda_Mexicana\\moneda_Mexicana_50"
+# imagenes_validacion_50_dir = os.path.join(direccion, f"{name_template}50")
 
 # Carpeta con las imágenes de validación de monedas de 50 cent pl
-imagenes_validacion_50pl_dir = "C:\\Users\\koime\\Desktop\\Coinmaru\\img\\Validacion\\Moneda_Mexicana\\moneda_Mexicana_50_pl"
+imagenes_validacion_50pl_dir = os.path.join(direccion, f"{name_template}50_pl")
 
 # Obtener el diámetro máximo y mínimo de las monedas de 10 pesos
 diametro_max_10, diametro_min_10 = obtener_diametros_min_max(imagenes_validacion_10_dir)
@@ -165,7 +168,7 @@ diametro_max_1, diametro_min_1 = obtener_diametros_min_max(imagenes_validacion_1
 #print("Diametro mínimo de monedas de 1 peso:", diametro_min_1)
 
 # Obtener el diámetro máximo y mínimo de las monedas de 50 centavos
-diametro_max_50, diametro_min_50 = obtener_diametros_min_max(imagenes_validacion_50_dir)
+# diametro_max_50, diametro_min_50 = obtener_diametros_min_max(imagenes_validacion_50_dir)
 #print("Diametro máximo de monedas de 50 cent:", diametro_max_1)
 #print("Diametro mínimo de monedas de 50 cent:", diametro_min_1)
 
@@ -237,7 +240,7 @@ def procesar_foto(imagen_path):
 
 # Interfaz de usuario para seleccionar la cámara
 #seleccionar_camara()
-camera_index = 0
+camera_index = 1
 
 print("Camara seleccionada",camera_index)
 # Captura de la cámara seleccionada

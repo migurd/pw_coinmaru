@@ -36,7 +36,8 @@ def detectar_monedas(frame):
 def capturar_imagenes():
   # Carpeta donde se almacenarán las imágenes de validación de monedas mexicanas de 10 pesos
   nombre = "moneda_Mexicana_50_pl"
-  direccion = "C:\\Users\\koime\\Desktop\\Coinmaru\\img\\Validacion\\Moneda_Mexicana\\" # Se necesita cambiar la ruta correspondiente para usar el path actual más ./img/Validacion/...
+  current_path = os.getcwd()  # Get the current working directory
+  direccion = os.path.join(current_path, "img", "Validacion", "Moneda_Mexicana")
   carpeta = os.path.join(direccion, nombre)
 
   if not os.path.exists(carpeta):
@@ -44,7 +45,7 @@ def capturar_imagenes():
     os.makedirs(carpeta)
 
   # Captura de la cámara
-  camera_index = 0
+  camera_index = 1
   cap = cv2.VideoCapture(camera_index)
 
   # Configurar el tamaño del fotograma capturado
